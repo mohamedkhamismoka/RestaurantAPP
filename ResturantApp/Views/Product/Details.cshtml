@@ -1,0 +1,60 @@
+﻿@model ProductVM
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div class="col-12">
+    <div class="row">
+        <!-- Textual inputs start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title"> Product Details</h4>
+
+                    <form asp-controller="Product" asp-action="create" enctype="multipart/form-data">
+
+                       
+                        <div class="form-group">
+                            <label asp-for="Name" class="col-form-label">Name</label>
+                            <input  disabled class="form-control" type="text" placeholder="Enter Product Name" asp-for="Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="unitPrice" class="col-form-label">Unit Price</label>
+                            <input disabled class="form-control" type="number" asp-for=unitPrice placeholder="Enter UnitPrice">
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Img" class="col-form-label">Image</label>
+                          
+                            <img class="img-thumbnail d-block" src="~/productImages/@Model.ImgName" width="300" height="250" id="image" />
+                         
+
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Description" class="col-form-label">Description</label>
+                            <textarea disabled asp-for="Description" class="form-control" placeholder="Enter description"></textarea>
+                        </div>
+                        <center>
+                            <a class="btn btn-primary" asp-controller="Product" asp-action="Index">Back To Data</a>
+                        </center>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Textual inputs end -->
+        <!-- Radios start -->
+        <!-- button with dropdown end -->
+    </div>
+</div>
+
+
+
+
+
+
+

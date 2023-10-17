@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+@model CustomerVM
+
+<div class="col-12">
+    <div class="row">
+        <!-- Textual inputs start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title"> Customer Details</h4>
+
+                    <form>
+                       
+
+                        <div class="form-group">
+                            <label asp-for="Name" class="col-form-label">Name</label>
+                            <input class="form-control" type="text" placeholder="Enter Name" asp-for="Name" disabled>
+                            <span class="text-danger d-block my-2" asp-validation-for="Name"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Address" class="col-form-label">Address</label>
+                            <input class="form-control" type="text" asp-for=Address placeholder="Enter Address" disabled>
+                            <span class="text-danger d-block my-2" asp-validation-for="Address"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="Email" class="col-form-label">Email</label>
+                            <input type="text" asp-for="Email" class="form-control" placeholder="Enter Email" id="email" disabled>
+                            <span class="text-danger d-block my-2" asp-validation-for="Email"></span>
+                            <span id="myspanemail" class="text-danger d-block my-2"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Phone" class="col-form-label">Phone</label>
+                            <input type="text" asp-for="Phone" class="form-control" placeholder="Enter Phone" id="phone" disabled>
+                            <span class="text-danger d-block my-2" asp-validation-for="Phone"></span>
+                            <span id="myspanphone" class="text-danger d-block my-2"></span>
+                        </div>
+                        <center>
+                            <a class="btn btn-success" asp-controller="Customer" asp-action="Index" id="crt" >Back To Data</a>
+                        </center>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Textual inputs end -->
+        <!-- Radios start -->
+        <!-- button with dropdown end -->
+    </div>
+</div>
+
+
+

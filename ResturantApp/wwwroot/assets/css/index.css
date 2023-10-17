@@ -1,0 +1,62 @@
+﻿table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > td:first-child:before, table.dataTable.dtr-inline.collapsed > tbody > tr[role="row"] > th:first-child:before {
+    display: none
+}
+
+table.dataTable thead > tr > th.sorting_asc, table.dataTable thead > tr > th.sorting_desc, table.dataTable thead > tr > th.sorting, table.dataTable thead > tr > td.sorting_asc, table.dataTable thead > tr > td.sorting_desc, table.dataTable thead > tr > td.sorting {
+    text-align: center
+}
+
+.compact {
+    text-align: center;
+    padding-top: 50px;
+    width: 800px;
+}
+
+    .compact thead tr th {
+        text-align: center
+    }
+
+    .compact tbody tr td {
+        text-align: center
+    }
+
+.compacth1 {
+    text-align: center;
+    padding: 40px 0;
+}
+
+    .compacth1 + .compactdiv {
+        text-align: right;
+        margin-right: 90px;
+    }
+
+table.dataTable {
+    width: 800px
+}
+
+#btn-export {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: 0.167em;
+    margin-right: 0.167em;
+    margin-bottom: 0.333em;
+    padding: 0.5em 1em;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: .88em;
+    line-height: 1.6em;
+    color: inherit;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, rgba(230, 230, 230, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    outline: none;
+    text-overflow: ellipsis;
+}

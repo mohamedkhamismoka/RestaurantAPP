@@ -1,0 +1,14 @@
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\bin\Debug\net6.0\RestaurantApp.DAL.deps.json
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\bin\Debug\net6.0\RestaurantApp.DAL.runtimeconfig.json
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\bin\Debug\net6.0\RestaurantApp.DAL.dll
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\bin\Debug\net6.0\RestaurantApp.DAL.pdb
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.csproj.AssemblyReference.cache
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.AssemblyInfoInputs.cache
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.AssemblyInfo.cs
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.csproj.CoreCompileInputs.cache
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.dll
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\refint\RestaurantApp.DAL.dll
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.pdb
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\RestaurantApp.DAL.genruntimeconfig.cache
+C:\Users\EL-Masria\source\repos\ResturantApp\RestaurantApp.DAL\obj\Debug\net6.0\ref\RestaurantApp.DAL.dll

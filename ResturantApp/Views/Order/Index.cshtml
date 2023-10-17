@@ -1,0 +1,40 @@
+﻿@model OrderPhoneVM;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="col-12">
+    <div class="row">
+        <!-- Textual inputs start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    
+
+                    <form asp-controller="Order" asp-action="Index" method="Post">
+
+                   
+                      
+                            <div class="form-group">
+
+                           
+                            <label asp-for="Phone">Phone Number:</label><br />
+                            <input type="text" asp-for="Phone" class="form-control" />
+                            <span class="text-danger d-block my-2" asp-validation-for="Phone"></span>
+                                <div class="text-danger my-2" asp-validation-summary="ModelOnly"></div>
+                            </div>
+                        <center>
+                            <button class="btn btn-primary" type="submit">Make Order</button>
+                        </center>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Textual inputs end -->
+        <!-- Radios start -->
+        <!-- button with dropdown end -->
+    </div>
+</div>

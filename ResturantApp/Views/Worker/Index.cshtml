@@ -1,0 +1,85 @@
+﻿@model IEnumerable<WorkerVM>
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section style{
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.jqueryui.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" href="/assets/css/index.css" />
+}
+<div class="col-12 mt-5">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="header-title">Workers Menu</h4>
+            <center>
+                <a class="btn btn-primary mb-3" asp-controller="Worker" asp-action="Create">Create Worker <i class="fa fa-plus ml-2"></i></a>
+            </center>
+            <div class="data-tables datatable-primary">
+                <div id="dataTable2_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+                    <div class="col-sm-12 table-responsive">
+
+                        <table id="dataTable2" class="text-center dataTable no-footer dtr-inline collapsed" role="grid" aria-describedby="dataTable2_info" style="width: 1131px;">
+                            <thead class="text-capitalize">
+                                <tr role="row">
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" style="width: 141px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">ID</th>
+
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" style="width: 141px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Name</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" style="width: 120px;" aria-label="Office: activate to sort column ascending">Address</th>
+                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" style="width: 141px;" aria-sort="ascending" aria-label="Name: activate to sort column descending">Salary</th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" style="width: 100px" aria-label="salary: activate to sort column ascending">BirthDate</th>
+
+                                    <th>Details</th>
+                                    <th>update</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.Name</td>
+                                        <td>@item.Address</td>
+                                        <td>@item.Salary $</td>
+                                        <td>@item.BirthDate.ToShortDateString()</td>
+                                        <td><a class="btn btn-success text-light" asp-controller="Worker" asp-action="Details" asp-route-id="@item.Id">Details</a></td>
+                                        <td><a class="btn btn-primary text-light" asp-controller="Worker" asp-action="Update" asp-route-id="@item.Id">Update</a></td>
+                                        <td><a class="btn btn-danger text-light"  asp-controller="Worker" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+@section scripts{
+    <script src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.4.1/js/buttons.print.min.js"></script>
+    <script src="/assets/js/dataTables.export.js"></script>
+    <script src="~/assets/js/index-worker.js"></script>
+
+    }
+
+
+
+

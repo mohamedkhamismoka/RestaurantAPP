@@ -1,0 +1,10 @@
+﻿@media screen and (max-width:450px) {
+    .login-box form {
+        width: 100%
+    }
+}
+.login-form-head,
+.login-form-body {
+    padding: 20px;
+}
+

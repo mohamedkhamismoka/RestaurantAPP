@@ -1,0 +1,151 @@
+﻿
+@model LoginVM;
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="~/assets/images/icon/favicon.ico">
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/assets/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/css/metisMenu.css">
+    <link rel="stylesheet" href="~/assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- others css -->
+    <link rel="stylesheet" href="~/assets/css/typography.css">
+    <link rel="stylesheet" href="~/assets/css/default-css.css">
+    <link rel="stylesheet" href="~/assets/css/styles.css">
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <link rel="stylesheet" href="~/assets/css/Custom.css">
+    <!-- modernizr css -->
+    <script src="~/assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- login area start -->
+    <div class="login-area login-s2">
+        <div class="container" style="display:flex;align-items:center;justify-content:center">
+            <div class="login-box ptb--100" style="padding-bottom:20px;display: grid;">
+                <form asp-controller="Account" asp-action="Login" method="post">
+                    <div class="login-form-head">
+                        <h4>Sign In</h4>
+                        <p>Hello there, Sign in and start managing your Admin Template</p>
+                    </div>
+                    <div class="login-form-body">
+
+                        <div class="text-danger font-weight-bold mb-4">@ViewBag.error</div>
+
+
+                        <div class="form-gp">
+                            
+                            <input type="email" asp-for="Email" placeholder="Email Address">
+                            <i class="ti-email"></i>
+                            <span class="text-danger font-weight-bold d-block my-2" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="form-gp">
+                           
+                            <input type="password" asp-for="Password" placeholder="Password">
+                            <i class="ti-lock"></i>
+                            <span class="text-danger font-weight-bold d-block my-2" asp-validation-for="Password"></span>
+                        </div>
+                        <div class="row mb-4 rmber-area">
+                            <div class="col-6">
+                                <div class="custom-control custom-checkbox mr-sm-2">
+                                    <input type="checkbox" class="custom-control-input" asp-for="RememberMe">
+                                    <label class="custom-control-label" asp-for="RememberMe">Remember Me</label>
+                                </div>
+                            </div>
+                            <div class="col-6 text-right">
+                                <a asp-controller="Account" asp-action="ForgetPassword">Forgot Password?</a>
+                            </div>
+                        </div>
+                        <div class="submit-btn-area">
+                            <button id="form_submit" type="submit">Submit <i class="ti-arrow-right"></i></button>
+                        </div>
+                        <div class="form-footer text-center mt-5">
+                            <p class="text-muted">Don't have an account? <a asp-controller="Account" asp-action="Register">Sign up</a></p>
+                        </div>
+                    </div>
+                </form>
+                <form asp-controller="Account" asp-action="ExternalLogin" asp-route-ReturnUrl="@Model.ReturnUrl" method="post" style="margin-top:5px">
+
+                    <div class="d-flex " style="align-items: baseline; gap: 20px;margin-top: -40px;justify-content:center">
+                        @if (Model.ExternalLogin == null)
+                        {
+                            
+
+
+                            <button type="submit" class=" btn btn-block btn btn-danger"><i class="fab fa-google-plus mr-2"></i> Google+</button>
+                            <button type="submit" class=" btn btn-block btn btn-primary"><i class="fab fa-facebook mr-2"></i> Facebook</button>
+
+                        }
+                        else
+                        {
+                            @foreach (var provider in Model.ExternalLogin)
+                            {
+                                if (provider.Name.Contains("F") || provider.Name.Contains("f"))
+                                {
+                                    <button type="submit" class=" btn btn-block btn btn-primary" name="provider" value="@provider.Name" style="width:40%"><i class="fab fa-facebook mr-2"></i> Facebook</button>
+
+                                }
+                                if (provider.Name.Contains("G") || provider.Name.Contains("g"))
+                                {
+                                    <button type="submit" class=" btn btn-block btn btn-danger" name="provider" value="@provider.Name" style="width:40%"><i class="fa-brands fa-google mr-2"></i>Google</button>
+
+                                }
+
+                            }
+                        }
+                    </div>
+                    @*<a class="btn btn-block btn btn-danger" asp-controller="Account" asp-action="GoogleLogin">
+                    <i class="fab fa-facebook mr-2"></i>  Sign in using Google+
+                    </a>*@
+                </form>
+            </div>
+           
+        </div>
+    </div>
+    <!-- login area end -->
+    <!-- jquery latest version -->
+    <script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="~/assets/js/popper.min.js"></script>
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <script src="~/assets/js/owl.carousel.min.js"></script>
+    <script src="~/assets/js/metisMenu.min.js"></script>
+    <script src="~/assets/js/jquery.slimscroll.min.js"></script>
+    <script src="~/assets/js/jquery.slicknav.min.js"></script>
+
+    <!-- others plugins -->
+    <script src="~/assets/js/plugins.js"></script>
+    <script src="~/assets/js/scripts.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+</body>
+
+</html>

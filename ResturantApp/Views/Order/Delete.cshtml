@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+    var total = 0;
+}
+
+
+@model OrderVM;
+@inject ICustomer customer;
+@inject IWorker Worker;
+@inject IProduct Product;
+@inject IProductOrder product_order;
+<div class="col-12">
+    <div class="row">
+        <!-- Textual inputs start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title"> Delete Order</h4>
+
+                    <form asp-controller="Order" asp-action="Delete" method="post">
+                      
+                        <input type="hidden" name="id" value="@Model.Id" />
+                        <div class="form-group">
+                            <label class="col-form-label">Customer Name</label>
+                            <input class="form-control" type="text" value="@customer.GetById((int)Model.customer_id).Name" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">Customer Email</label>
+                            <input class="form-control" type="text" name="customerEmail" value="@customer.GetById((int)Model.customer_id).Email" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Waiter</label>
+                            <input class="form-control" type="text" value="@Worker.GetById((int)Model.workerid).Name" disabled>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Order Date</label>
+                            <input class="form-control" type="Date" asp-for="Date" disabled>
+                        </div>
+                        <div class="form-group " style="overflow-x:auto">
+
+                            <table style="font-size: 12pt;width:100%" class="table table-hover table-striped table-bordered">
+                                <tr style="text-align:center">
+                                    <th style="background-color: #B8DBFD;border: 1px solid #ccc">Product</th>
+                                    <th style="background-color: #B8DBFD;border: 1px solid #ccc">Unit Price</th>
+                                    <th style="background-color: #B8DBFD;border: 1px solid #ccc">quantity</th>
+
+                                </tr>
+                                @foreach (var item in product_order.getbyOrderID(Model.Id))
+                                {
+                                    total = total + item.Quantity * item.Product.unitPrice;
+                                    <tr style="text-align:center">
+                                        <td>@item.Product.Name</td>
+                                        <td>@item.Product.unitPrice</td>
+                                        <td>@item.Quantity</td>
+
+                                    </tr>
+
+
+                                }
+                                <tr style="color:red;text-align:center">
+                                    <td>
+                                        Total Price
+                                    </td>
+                                    <td colspan="2"> @total</td>
+                                </tr>
+                             
+                            </table>
+                       
+
+                        </div>
+                        <center>
+                            <button class="btn btn-danger text-light" id="send" type="submit">Delete</button>
+                        </center>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

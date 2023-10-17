@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+@model WorkerVM
+<div class="col-12">
+    <div class="row">
+        <!-- Textual inputs start -->
+        <div class="col-12 mt-5">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="header-title">Add Worker</h4>
+
+                    <form asp-controller="Worker" asp-action="create" enctype="multipart/form-data">
+
+                       
+                        <div class="form-group">
+                            <label asp-for="Name" class="col-form-label">Name</label>
+                            <input class="form-control" type="text" placeholder="Enter Name" asp-for="Name">
+                            <span class="text-danger d-block my-2" asp-validation-for="Name"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Address" class="col-form-label">Address</label>
+                            <input class="form-control" type="text" asp-for=Address placeholder="Enter Address">
+                            <span class="text-danger d-block my-2" asp-validation-for="Address"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="BirthDate" class="col-form-label">Birthdate</label>
+                            <input type="date" asp-for="BirthDate" class="form-control" placeholder="Enter Birthdate">
+                            <span class="text-danger d-block my-2" asp-validation-for="BirthDate"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="HireDate" class="col-form-label">HireDate</label>
+                            <input type="date" asp-for="HireDate" class="form-control" placeholder="Enter Hiredate">
+                            <span class="text-danger d-block my-2" asp-validation-for="HireDate"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Salary" class="col-form-label">Salary</label>
+                            <input class="form-control" type="number" asp-for=Salary placeholder="Enter Salary">
+                            <span class="text-danger d-block my-2" asp-validation-for="Salary"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Img" class="col-form-label">Image</label>
+                            <input class="form-control" type="file" asp-for=Img id="imgfile">
+                            <img src="" width="200" height="200" id="image" class="my-2" />
+                            <span class="text-danger d-block mt-2 mb-2" asp-validation-for="Img"> </span>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="CV" class="col-form-label">CV</label>
+                            <input class="form-control" type="file" asp-for=CV id="imgfile">
+                          
+                            <span class="text-danger d-block mt-2 mb-2" asp-validation-for="CV"> </span>
+
+                        </div>
+                        <center>
+                            <button class="btn btn-primary" type="submit">Create</button>
+                        </center>
+
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Textual inputs end -->
+        <!-- Radios start -->
+        <!-- button with dropdown end -->
+    </div>
+</div>
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/assets/js/ShowImage.js">
+
+</script>
+
+
+
+
+
+
