@@ -24,9 +24,9 @@ namespace RestaurantApp.DAL.Database
             builder.Entity<IdentityUserRole<string>>().HasNoKey();
             builder.Entity<IdentityUserToken<string>>().HasNoKey();
             builder.Entity<Customer>().HasMany<Order>(a=>a.Orders).WithOne(a=>a.customer).OnDelete(deleteBehavior
-                : DeleteBehavior.Cascade);
+                : DeleteBehavior.SetNull);
             builder.Entity<Worker>().HasMany<Order>(a => a.orders).WithOne(a => a.worker).OnDelete(deleteBehavior
-                : DeleteBehavior.Cascade);
+                : DeleteBehavior.SetNull);
             //builder.Entity<Order>().HasMany<ProductOrder>(a => a.ProductOrders).WithOne(a => a.Order).OnDelete(deleteBehavior: DeleteBehavior.SetNull);
             //builder.Entity<Product>().HasMany<ProductOrder>(a => a.ProductOrders).WithOne(a => a.Product).OnDelete(deleteBehavior: DeleteBehavior.SetNull);
 

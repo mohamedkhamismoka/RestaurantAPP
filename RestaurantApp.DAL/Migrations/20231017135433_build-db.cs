@@ -158,9 +158,9 @@ namespace RestaurantApp.DAL.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     imgname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "Date", nullable: false),
                     CVname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HireDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    HireDate = table.Column<DateTime>(type: "Date", nullable: false),
                     Salary = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -174,7 +174,7 @@ namespace RestaurantApp.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Date = table.Column<DateTime>(type: "Date", nullable: false),
                     customer_id = table.Column<int>(type: "int", nullable: true),
                     workerid = table.Column<int>(type: "int", nullable: true)
                 },

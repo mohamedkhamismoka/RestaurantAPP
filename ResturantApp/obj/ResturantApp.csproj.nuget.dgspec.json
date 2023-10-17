@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\ResturantApp\\ResturantApp.csproj": {}
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\ResturantApp\\ResturantApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.BL\\RestaurantApp.BL.csproj": {
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.BL\\RestaurantApp.BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.BL\\RestaurantApp.BL.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.BL\\RestaurantApp.BL.csproj",
         "projectName": "RestaurantApp.BL",
-        "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.BL\\RestaurantApp.BL.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.BL\\RestaurantApp.BL.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.BL\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.BL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,8 +32,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj": {
-                "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj"
+              "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj": {
+                "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj"
               }
             }
           }
@@ -99,14 +99,14 @@
         }
       }
     },
-    "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj": {
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj",
         "projectName": "RestaurantApp.DAL",
-        "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.DAL\\RestaurantApp.DAL.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.DAL\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -184,14 +184,14 @@
         }
       }
     },
-    "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\ResturantApp\\ResturantApp.csproj": {
+    "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\ResturantApp\\ResturantApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\ResturantApp\\ResturantApp.csproj",
+        "projectUniqueName": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\ResturantApp\\ResturantApp.csproj",
         "projectName": "ResturantApp",
-        "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\ResturantApp\\ResturantApp.csproj",
+        "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\ResturantApp\\ResturantApp.csproj",
         "packagesPath": "C:\\Users\\EL-Masria\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\ResturantApp\\obj\\",
+        "outputPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\ResturantApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -213,8 +213,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.BL\\RestaurantApp.BL.csproj": {
-                "projectPath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.BL\\RestaurantApp.BL.csproj"
+              "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.BL\\RestaurantApp.BL.csproj": {
+                "projectPath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.BL\\RestaurantApp.BL.csproj"
               }
             }
           }

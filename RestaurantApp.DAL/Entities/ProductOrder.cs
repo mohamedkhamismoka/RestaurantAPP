@@ -13,10 +13,10 @@ namespace RestaurantApp.DAL.Entities
         public int Order_id { get; set; }
 
         [ForeignKey("Product_id")]
-        public Product? Product { get; set; }
+        public Product Product { get; set; }
 
           [ForeignKey("Order_id")]
-        public Order? Order { get; set; }
+        public Order Order { get; set; }
 
         public int Quantity { get; set; }
 

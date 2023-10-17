@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "v4q9rPk0oIiPs81fAmHjtm4yE+ks4NTOPNCGSvItalJp09zxXcLBPloxVQ6EuT7lQroR2LmBygsRyA/Xy/K5Iw==",
+  "dgSpecHash": "dlzeai+FY4XfDdlXDvDQaET+3Ogz8jah4lfcyphvNwmmgj57vmxP8bajrlLSAv8yG1jO1AOHxPs6YPls9pTNnw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\EL-Masria\\source\\repos\\ResturantApp\\RestaurantApp.BL\\RestaurantApp.BL.csproj",
+  "projectFilePath": "C:\\Users\\EL-Masria\\Documents\\GitHub\\RestaurantAPP\\RestaurantApp.BL\\RestaurantApp.BL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\EL-Masria\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\EL-Masria\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

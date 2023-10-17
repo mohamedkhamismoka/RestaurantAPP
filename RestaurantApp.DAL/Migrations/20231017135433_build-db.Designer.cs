@@ -12,7 +12,7 @@ using RestaurantApp.DAL.Database;
 namespace RestaurantApp.DAL.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230913222618_build-db")]
+    [Migration("20231017135433_build-db")]
     partial class builddb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -173,7 +173,7 @@ namespace RestaurantApp.DAL.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<int?>("customer_id")
                         .HasColumnType("int");
@@ -249,14 +249,14 @@ namespace RestaurantApp.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<string>("CVname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("HireDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("Date");
 
                     b.Property<string>("Name")
                         .IsRequired()

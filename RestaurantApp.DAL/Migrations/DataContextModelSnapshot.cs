@@ -173,10 +173,10 @@ namespace RestaurantApp.DAL.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("Date");
 
-                    b.Property<int>("customer_id")
+                    b.Property<int?>("customer_id")
                         .HasColumnType("int");
 
-                    b.Property<int>("workerid")
+                    b.Property<int?>("workerid")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -332,14 +332,12 @@ namespace RestaurantApp.DAL.Migrations
                     b.HasOne("RestaurantApp.DAL.Entities.Customer", "customer")
                         .WithMany("Orders")
                         .HasForeignKey("customer_id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.HasOne("RestaurantApp.DAL.Entities.Worker", "worker")
                         .WithMany("orders")
                         .HasForeignKey("workerid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("customer");
 
