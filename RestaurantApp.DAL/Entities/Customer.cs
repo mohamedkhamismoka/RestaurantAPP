@@ -10,7 +10,7 @@ namespace RestaurantApp.DAL.Entities
 {
     public class Customer
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+   
         public int Id { get; set; }
         [StringLength(20)]
 
@@ -18,7 +18,7 @@ namespace RestaurantApp.DAL.Entities
         public string Address { get; set; }
        
         public string Phone { get; set; }
-        [DataType(DataType.EmailAddress)]
+        
         public string Email { get; set; }
         public IEnumerable<Order> Orders { get; set; }
 

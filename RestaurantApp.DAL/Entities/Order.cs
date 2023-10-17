@@ -9,17 +9,19 @@ namespace RestaurantApp.DAL.Entities
 {
     public  class Order
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    
         public int Id { get; set; }
+        [Column(TypeName = "Date")]
+
         public DateTime Date { get; set; }
 
-        public int? customer_id { get; set; }
+        public int  customer_id { get; set; }
         [ForeignKey("customer_id")]
-        public Customer? customer { get; set; }
+        public Customer  customer { get; set; }
 
-        public IEnumerable<ProductOrder> ProductOrders { get; set; }
+        public IEnumerable<ProductOrder> ?ProductOrders { get; set; }
         [ForeignKey("workerid")]
-        public Worker? worker { get; set; }
-        public int? workerid { get; set; }
+        public Worker worker { get; set; }
+        public int  workerid { get; set; }
     }
 }
