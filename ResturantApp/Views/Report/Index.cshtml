@@ -21,33 +21,47 @@
                      <input type="hidden" name="day" id="day" />
                         <input type="hidden" name="month" id="month" />
                         <input type="hidden" name="year" id="year" />
+                        <input type="hidden" name="html" id="html" />
                    
                         <center>
                             <div class="d-flex justify-content-center " style="gap: 10px;">
 
                           
-                            <a class="btn btn-success submit text-light " id="excel">Excel</a>
-                           
+                            <button class="btn btn-success submit text-light " id="excel" disabled>Excel</button>
+
+                                <button class="btn btn-danger submit text-light " id="pdf" disabled>PDF</a>
                             </div>
                         </center>
                     </form>
-                    <div style="overflow-x:auto">
+                    <div style="overflow-x:auto" id="grid">
 
+                        <h2 style="text-align:center;color:red;margin:10px 0px">Orders List</h2>
+           
+                        <table style="font-size: 12pt;width:100%;margin-top:50px;text-align: center;" cellpadding="5" cellspacing="0" style="border: 1px solid #ccc; font-family: Arial; font-size: 10pt;" class="table table-hover table-striped table-bordered">
+                       
+                            <tr style="text-align:center">
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">OrderID</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Date</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Customername</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Waiter Name</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Total</th>
 
-                        <table class="table table-bordered table-striped table-hover " style="margin-top:50px;text-align: center;">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Date</th>
-                                <th>Customer Name</th>
-                                <th>Waiter Name</th>
-                                <th>Total</th>
                             </tr>
-                        </thead>
-                        <tbody>
+                      
+                  
+                        </table>
+                        <table style="font-size: 12pt;width:100%;margin-top:50px;text-align: center;" cellpadding="5" cellspacing="0" style="border: 1px solid #ccc; font-family: Arial; font-size: 10pt;" class="table table-hover table-striped table-bordered pdf">
 
-                        </tbody>
-                    </table>
+                            <tr style="text-align:center">
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">OrderID</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Date</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Customername</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Waiter Name</th>
+                                <th style="background-color: #B8DBFD;border: 1px solid #ccc">Total</th>
+
+                            </tr>
+
+                        </table>
                     </div>
                 </div>
             </div>
@@ -56,8 +70,11 @@
 </div>
 @section scripts{
     <script src="~/assets/js/vendor/jquery-2.2.4.min.js"></script>
+ 
     <script>
         $(document).ready(function(){
+
+
             $("table").css("display", "none");
             $("#date").on('input',function(){
                
@@ -73,17 +90,27 @@
                     success:function(result){
                       console.log(result)
                         if (result.orders.length >0){
-                            $("tbody").empty();
+                          
+                            $("table").empty();
                             $("table").css("display", "table");
+                            $("table.pdf").css("display", "none");
+                            $("table").append("<tr><th style='background-color:#B8DBFD; border: 1px solid #ccc'>  Order ID  </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'>  Date  </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'>  customer name  </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'> Waiter Name   </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'>Total Price   </th></tr>")
+
                             for (var i = 0; i < result.orders.length; i++) {
                                  var total= result.orders[i].id;
-                                $("tbody").append("<tr><td>" + result.orders[i].id + "</td><td>" + result.orders[i].date.substring(0, 10) + "</td><td>" + result.orders[i].customer.name + "</td><td>" + result.orders[i].worker.name + "</td><td>" +result.total[i]+" $</td></tr>")
+                                $("table").append("<tr><td style='border: 1px solid #ccc'>" + result.orders[i].id + "</td><td style='border: 1px solid #ccc'>" + result.orders[i].date.substring(0, 10) + "</td><td style='border: 1px solid #ccc'>" + result.orders[i].customer.name + "</td><td style='border: 1px solid #ccc'>" + result.orders[i].worker.name + "</td><td style='border: 1px solid #ccc'>" + result.total[i] + " $</td></tr>")
                             }
+
+                            $("#excel").prop("disabled",false);
+                            $("#pdf").prop("disabled", false);
                         }
                             else{
-                            $("tbody").empty();
+                            $("table").empty();
                             $("table").css("display", "table");
-                                $("tbody").append("<tr><td colspan='5' style='text-align:center'>No Data</td></tr>");
+                            $("table.pdf").css("display", "none");
+                                                        $("table").append("<tr><th style='background-color:#B8DBFD; border: 1px solid #ccc'>  Order ID  </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'>  Date  </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'>  customer name  </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'> Waiter Name   </th><th style='background-color:#B8DBFD; border: 1px solid #ccc'>Total Price   </th></tr>")
+
+                                $("table").append("<tr><td colspan='5' style='text-align:center'>No Data</td></tr>");
                             }
                         }
                      
@@ -104,6 +131,22 @@
                 $("form").submit();
 
             })
+                    $("#pdf").on('click',function(){
+
+                var date = new Date($('#date').val());
+                var day = date.getDate();
+                var month = date.getMonth() + 1;
+                var year = date.getFullYear();
+                $("#day").val(day)
+                $("#month").val(month)
+                $("#year").val(year);
+               $("#html").val($("#grid").html())
+                $("form").attr("action",'/Report/pdf');
+                $("form").submit();
+
+            })
+   
+
           
         })
     </script>

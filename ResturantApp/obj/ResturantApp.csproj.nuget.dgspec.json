@@ -266,6 +266,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[6.0.16, )"
+            },
+            "itext7.pdfhtml": {
+              "target": "Package",
+              "version": "[4.0.4, )"
+            },
+            "sautinsoft.document": {
+              "target": "Package",
+              "version": "[2023.9.10, )"
             }
           },
           "imports": [

@@ -3,6 +3,19 @@ using DocumentFormat.OpenXml.Bibliography;
 using Microsoft.AspNetCore.Mvc;
 using RestaurantApp.BL.interfaces;
 using System.Security.Cryptography;
+using System.IO;
+using System.Text;
+using iText.Html2pdf;
+using iText.IO.Source;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using NuGet.ProjectModel;
+using DocumentFormat.OpenXml.Office.ContentType;
+using System.Data.SqlTypes;
+using System.Reflection.Metadata;
+using Humanizer;
+using System.Text;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace ResturantApp.Controllers
 {
@@ -10,6 +23,8 @@ namespace ResturantApp.Controllers
     {
         private readonly IOrder _order;
         private readonly IProductOrder productOrder;
+
+        public iText.Layout.Borders.Border border { get; private set; }
 
         public ReportController(IOrder order, IProductOrder productOrder)
         {
@@ -34,7 +49,7 @@ namespace ResturantApp.Controllers
             return Json(new { orders = data, total = total });
 
         }
-      
+
         public IActionResult Excel(int day, int month, int year)
         {
             var data = _order.GetAll().Where(a => a.Date.Day == day && a.Date.Month == month && a.Date.Year == year);
@@ -63,11 +78,32 @@ namespace ResturantApp.Controllers
                     var content = stream.ToArray();
                     return File(
                        content,
-                       "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                       "application/pdf",
                        "orders for " + day + "/" + month + "/" + year + ".xlsx"
                        );
                 }
 
+            }
+        }
+        public IActionResult pdf(string html, int day, int month, int year)
+        {
+          
+            using (MemoryStream stream = new MemoryStream(Encoding.ASCII.GetBytes(html)))
+            {
+             
+
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                PdfWriter writer = new PdfWriter(byteArrayOutputStream);
+              
+                PdfDocument pdfDocument = new PdfDocument(writer);
+              
+                pdfDocument.SetDefaultPageSize(iText.Kernel.Geom.PageSize.A4);
+       
+
+                HtmlConverter.ConvertToPdf(stream, pdfDocument);
+
+                pdfDocument.Close();
+                return File(byteArrayOutputStream.ToArray(), "application/pdf", "orders for "+day+'/'+month+'/'+year+".pdf");
             }
         }
     }
